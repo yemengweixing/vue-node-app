@@ -1,0 +1,188 @@
+mongodb+srv://test:<password>@cluster0-bi8g7.mongodb.net/test?retryWrites=true&w=majority
+
+mongodb+srv://test:MONGOdb@cluster0-bi8g7.mongodb.net/test?retryWrites=true&w=majority
+
+
+
+
+mongodb+srv://test:<password>@cluster0-bi8g7.mongodb.net/test?retryWrites=true&w=majority
+
+mongodb+srv://test:123456..@cluster0-bi8g7.mongodb.net/test?retryWrites=true&w=majority
+
+
+
+
+
+1 npm init
+创建pack。js
+并且
+description  为 restful api
+entry point :  入口文件为     server.js 
+
+2
+touch server.js
+创建server。js
+
+3npm install express
+添加express
+
+添加 nodemon
+yarn global add nodemon
+
+package.json
+"scripts"  修改
+
+  "scripts": {
+    "start": "node server.js",                   需要重启
+    "server": "nodemon server.js"                           热启动
+    
+  },
+
+npm run server
+热启动        开发时候使用
+
+
+数据库链接
+4npm install mongoose 
+修改
+mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true })
+
+增加 conffig 文件夹  keys js文件
+
+创建routes 里 api      users.js
+创建models文件夹User.js
+
+
+5
+npm install body-parser
+
+
+//使用 body-parser中间件
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
+
+密码加密
+npm install bcrypt 不行
+npm install bcryptjs 这个
+
+
+6
+npm i gravatar           头像  默认灰白头像
+
+
+8
+npm install jsonwebtoken
+创建token
+9
+验证token
+npm install passport-jwt  passport
+
+http://localhost:5000/api/users/current
+key Authorization
+value token
+
+
+
+
+
+
+17
+
+npm install -g @vue/cli
+
+-V 要大写
+
+创建    要用编辑器的终端
+vue create client
+
+
+一
+
+出现两个选择
+
+1 。1是仅仅是
+
+1.2自定义安装内容（回车键 选择这个）
+
+
+
+二 
+
+按数字选择（安装内容顺序即键盘数字顺序 要第几个就按第几个 绿色即选中）
+
+回车键  安装
+
+三 
+
+输入 y
+
+四
+
+选择是否 要pakeage.json（要 选择下面回车键）
+
+五 
+
+n
+
+开始安装了
+
+
+启动
+
+cd name
+
+
+npm run serve
+
+
+
+在app 文件夹
+npm install concurrently
+链接绑定 前端后端
+
+
+"serve": "vue-cli-service serve",
+  "build": "vue-cli-service build",
+  "start": "npm run serve"
+
+start 启动 serve启动前端
+start在后端 被 client启动
+
+
+外部项目package json
+//启动时候 安装  client的依赖
+ "client-install" :"npm install --prefix client",
+//启动前端  start在前端package   --告诉路径在何 
+    "client":"npm start --prefix client",
+
+链接前端 后端  同时启动
+"dev":"concurrently \"npm run server\" \"npm run client\""
+
+换成 npm run dev   启动
+
+
+18
+删除 原生 vue文件
+
+19
+在client
+npm i element-ui -S
+22
+在client
+npm i axios
+
+
+！！！！！！！！！！！！！！！！！！！！！！
+vue.config.js  中
+把baseUrl换成publicPath
+
+
+24 httml    
+import router from './router'
+
+2
+在client
+npm i jwt-decode
+
+Login.vue 导入
+  import jwt_decode from "jwt-decode";
